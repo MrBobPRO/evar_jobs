@@ -1,5 +1,50 @@
-<section class="vacancies">
+ {{-- Vacancies Tabs is vertical tabs with id #v-pills-tab --}}
+ {{-- CV Form is horizontal tabs with id #pills-tab  --}}
+
+<section class="vacancies" id="vacancies_section">
+    {{-- Vacancies inner start --}}
     <div class="main-container vacancies__inner">
         <h1 class="main-title">Горячие вакансии</h1>
-    </div>
+        {{-- Tab start --}}
+        <div class="vacancies-tab" id="vacancies_tab">
+            {{-- Tab Pills Container used just for vacancies count --}}
+            <div class="vacancies-tab__pills-container">
+                {{-- Tab buttons start --}}
+                <div class="nav nav-pills vacancies-tab__pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @foreach ($vacancies as $vacancy)
+                        <button class="nav-link @unless($loop->index) active @endunless" id="v-pills-{{$vacancy->id}}-tab"
+                            data-bs-toggle="pill" data-bs-target="#v-pills-{{$vacancy->id}}" type="button" role="tab"
+                            aria-controls="v-pills-{{$vacancy->id}}" aria-selected="{{ $loop->index > 0 ? 'false' : 'true'}}">
+                            <p class="vacancies-tab__vacancy-name">{{$vacancy->name }}</p>
+                            <p class="vacancies-tab__vacancy-salary">{{$vacancy->salary }}</p>
+                        </button>
+                    @endforeach
+                </div>  {{-- Tab buttons end --}}
+
+                <p class="vacanciest-tab__vacancies-counter">Все вакансии ({{ $vacancies->count() }})</p>
+            </div>  {{-- Tab Pills Container end --}}
+
+
+            {{-- Tabs content start --}}
+            <div class="tab-content vacancies-tab__content" id="v-pills-tabContent">
+                @foreach ($vacancies as $vacancy)
+                    <div class="tab-pane fade @unless($loop->index) show active @endunless" id="v-pills-{{ $vacancy->id }}"
+                        role="tabpanel" aria-labelledby="v-pills-{{ $vacancy->id }}-tab">
+                        <h2 class="vacancies-content__vacancy-name">{{$vacancy->name}}</h2>
+                        <p class="vacancies-content__vacancy-salary">{{$vacancy->salary}}</p>
+
+                        @for ($i = 1; $i < 7; $i++)
+                            @if($vacancy['key' . $i] != '' || $vacancy['value' . $i] != '')
+                                <div class="vacancies-content__vacancy-key">{{ $vacancy['key' . $i] }}</div>
+                                <div class="vacancies-content__vacancy-value">{!! $vacancy['value' . $i] !!}</div>
+                            @endif
+                        @endfor
+
+                        <a class="vacancies-content__button" href="#cv_section">Заполнить анкету</a>
+                    </div>
+                @endforeach
+            </div>  {{-- Tabs content end --}}
+        </div>  {{-- Tab end --}}
+
+    </div>  {{-- Vacancies inner end --}}
 </section>

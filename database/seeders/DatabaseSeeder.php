@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
         $user->email = 'evar_admin@mail.ru';
         $user->password = bcrypt('nYXk$5]~{9');
         $user->save();
+
+        $this->call(VacancySeeder::class);
+        $this->call(PositionSeeder::class);
     }
 }

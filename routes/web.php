@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@home')->name('home');
 
-
+Route::post("/cv/upload", "CvController@upload")->name("cv.upload");
+Route::post("/cv/store", "CvController@store")->name("cv.store");
 
 require __DIR__.'/auth.php';

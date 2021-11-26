@@ -9,7 +9,7 @@
             </li>
 
             <li class="navbar__item">
-                <a href="#header" class="navbar__link">Вакансии</a>
+                <a href="#vacancies_section" class="navbar__link">Вакансии</a>
             </li>
 
             <li class="navbar__item">
