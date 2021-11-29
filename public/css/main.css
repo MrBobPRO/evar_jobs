@@ -88,14 +88,20 @@ a:hover {
     display: flex;
 }
 .navbar-logo__img {
-    width: 125px;
+    height: 48px;
 }
-.navbar__list {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin: 0;
+.navbar-toggler {
     padding: 0;
+}
+.navbar-toggler .fa-bars {
+    color: var(--main-color);
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-nav {
+    gap: 40px;
+    margin: 0 0 0 auto;
 }
 .navbar__link {
     color: black;
@@ -305,10 +311,16 @@ a:hover {
     text-decoration: underline;
     margin: 20px 0 10px;
 }
+.vacancies-content__vacancy-key:empty {
+    display: none;
+}
 .vacancies-content__vacancy-value {
     font-size: 15px;
     line-height: 1.7;
     font-weight: 300;
+}
+.vacancies-content__vacancy-value:empty {
+    display: none;
 }
 .vacancies-content__button {
     color: #33333382;
@@ -332,4 +344,70 @@ a:hover {
     color: white;
     border-color: var(--main-color);
 }
-/* Vacancies утв */
+/* Vacancies end */
+
+
+/* Mobile vacancies start */
+.mobile-vacancies {
+    display: none;
+    padding: 20px 0;
+}
+.accordion-button {
+    font-size: 15px;
+    padding: 0.7rem 15px;
+    line-height: 1.6;
+    gap: 5px;
+}
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: #F7F8F9;
+}
+.accordion-button:focus {
+    border-color: rgba(0,0,0,.125);
+    box-shadow: none;
+}
+.accordion-button::after {
+    display: none;
+}
+.accordion-button span {
+    transition: transform .2s ease-in-out;
+    margin-left: auto;
+    color: #00000070;
+    font-size: 14px;
+}
+.accordion-button:not(.collapsed) span {
+    transform: rotate(180deg);
+    color: var(--main-color);
+}
+.accordion-body {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0.7rem 1.25rem;
+}
+.vacancies-accordion__collapse-salary {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.vacancies-accordion__collapse-key {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-style: italic;
+    text-decoration: underline;
+}
+.vacancies-accordion__collapse-value {
+    margin-bottom: 10px;
+}
+.vacancies-accordion__collapse-value:empty {
+    display: none;
+}
+.vacancies-accordion__collapse-button {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 13px 20px;
+}
+.vacancies-accordion__collapse-button:empty {
+    display: none;
+}
+/* Mobile vacancies end */

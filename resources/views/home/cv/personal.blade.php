@@ -111,7 +111,7 @@
             <div class="w-50-inner upload-photo-div">
                <div class="width-100">
                   <label>Фото<span>*</span></label>   
-                  <input name="photo" type="file" accept=".png, .jpeg, .jpg" class="upload-file upload-photo" id="photo" required>
+                  <input name="photo" type="file" accept="image/*" class="upload-file upload-photo" id="photo" required>
                </div>
             </div>
 

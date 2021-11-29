@@ -48,3 +48,40 @@
 
     </div>  {{-- Vacancies inner end --}}
 </section>
+
+
+<section class="mobile-vacancies" id="mobile_vacancies">
+    <h1 class="main-title">Горячие вакансии</h1>
+
+    <div class="accordion vacancies-accordion" id="vacancies_accordion">
+        @foreach ($vacancies as $vacancy)
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{$vacancy->id}}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{$vacancy->id}}" aria-expanded="false"
+                    aria-controls="collapse{{$vacancy->id}}">
+                    {{$vacancy->name}}<span><i class="fas fa-chevron-down"></i></span>
+                </button>
+            </h2>
+
+
+            <div id="collapse{{$vacancy->id}}" class="accordion-collapse collapse"
+                aria-labelledby="heading{{$vacancy->id}}" data-bs-parent="#vacancies_accordion">
+                <div class="accordion-body">
+                    <p class="vacancies-accordion__collapse-salary">{{$vacancy->salary}}</p>
+
+                    @for ($i = 1; $i < 7; $i++)
+                        @if($vacancy['key' . $i] != '' || $vacancy['value' . $i] != '')
+                            <div class="vacancies-accordion__collapse-key">{{ $vacancy['key' . $i] }}</div>
+                            <div class="vacancies-accordion__collapse-value">{!! $vacancy['value' . $i] !!}</div>
+                        @endif
+                    @endfor
+
+                    <a class="button thirdinary-button vacancies-accordion__collapse-button" href="#cv_section">Заполнить анкету</a>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+</section>
