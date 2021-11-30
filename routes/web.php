@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@home')->name('home');
 
+Route::post('/feedback', 'MainController@feedback')->name("feedback");
+
 Route::post("/cv/upload", "UploadController@store")->name("cv.upload");
 Route::post("/cv/download/template", "CvController@download_template")->name("cv.download.template");
 Route::post("/cv/store", "CvController@store")->name("cv.store");

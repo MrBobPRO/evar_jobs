@@ -1,4 +1,4 @@
-Laravel v8.21.0 (PHP v7.4.5)
+Laravel Framework 8.73.2 (PHP v7.4.5)
 Timezone -> Asia/Dushanbe
 Font -> Roboto
 
@@ -8,6 +8,8 @@ Bootstrap 5
 JQuery 3.5.1
 JQuery Form Styler 2.0.1  -> used to style selects, radiobuttons etc
 PhpWord -> used for downloading CVs in MWord format
+Simditor -> WYSIWIG
+Select2 -> as select and multiselect
 
 ---Uploaded CVs Storage---
 Uploaded CVs are stored in private Storage folder

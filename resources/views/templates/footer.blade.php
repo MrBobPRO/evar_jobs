@@ -14,7 +14,7 @@
         </div>
 
         <div class="footer__block footer-form">
-            <form action="/email" method="POST">
+            <form action="{{ route('feedback') }}" method="POST">
                 {{ csrf_field() }}
                 <input class="footer__form-input" type="text" name="name" placeholder="Имя" />
                 <input class="footer__form-input" type="text" name="email" placeholder="Почта*" type="email" required/>

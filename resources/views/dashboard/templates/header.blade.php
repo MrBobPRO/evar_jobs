@@ -33,7 +33,7 @@
         @break
 
         @case('dashboard.positions.create')
-        Должности / Добавить вакансию
+        Должности / Добавить должность
         @break
 
         @case('dashboard.positions.single')

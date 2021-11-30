@@ -98,7 +98,7 @@
 
     <script src=" {{ asset('js/main.js') }}"></script>
 
-    {{-- @include('templates.analitics') --}}
+    @include('templates.analitics')
 
 </body>
 
