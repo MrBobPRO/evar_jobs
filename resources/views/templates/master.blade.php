@@ -57,8 +57,15 @@
     <link href=" {{ asset('css/media.css') }}" rel="stylesheet" />
 
 
-    {{-- Spinner used while form submit --}}
-    {{-- <div class="spinner-container" id="spinner-container">
+    {{-- Alert Flasheed Messages --}}
+    @if($flash = session('alert'))
+    <div onclick="hide_flashed_message()" id="session" class="alert alert-danger" role="alert">
+        {{ $flash }}
+    </div>
+    @endif
+
+
+    <div class="spinner-container" id="spinner-container">
         <div class="spinner-border text-danger" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
@@ -66,7 +73,7 @@
             фотки :
             <span id="photo-size"></span>
         </p>
-    </div> --}}
+    </div>
 
 
     @include('templates.header')

@@ -33,12 +33,9 @@
                         <h2 class="vacancies-content__vacancy-name">{{$vacancy->name}}</h2>
                         <p class="vacancies-content__vacancy-salary">{{$vacancy->salary}}</p>
 
-                        @for ($i = 1; $i < 7; $i++)
-                            @if($vacancy['key' . $i] != '' || $vacancy['value' . $i] != '')
-                                <div class="vacancies-content__vacancy-key">{{ $vacancy['key' . $i] }}</div>
-                                <div class="vacancies-content__vacancy-value">{!! $vacancy['value' . $i] !!}</div>
-                            @endif
-                        @endfor
+                        <div class="vacancies-content__vacancy-body">
+                            {!! $vacancy->body !!}
+                        </div>
 
                         <a class="vacancies-content__button" href="#cv_section">Заполнить анкету</a>
                     </div>
@@ -69,13 +66,10 @@
                 aria-labelledby="heading{{$vacancy->id}}" data-bs-parent="#vacancies_accordion">
                 <div class="accordion-body">
                     <p class="vacancies-accordion__collapse-salary">{{$vacancy->salary}}</p>
-
-                    @for ($i = 1; $i < 7; $i++)
-                        @if($vacancy['key' . $i] != '' || $vacancy['value' . $i] != '')
-                            <div class="vacancies-accordion__collapse-key">{{ $vacancy['key' . $i] }}</div>
-                            <div class="vacancies-accordion__collapse-value">{!! $vacancy['value' . $i] !!}</div>
-                        @endif
-                    @endfor
+                    
+                    <div class="vacancies-accordion__collapse-body">
+                        {!! $vacancy->body !!}
+                    </div>
 
                     <a class="button thirdinary-button vacancies-accordion__collapse-button" href="#cv_section">Заполнить анкету</a>
                 </div>

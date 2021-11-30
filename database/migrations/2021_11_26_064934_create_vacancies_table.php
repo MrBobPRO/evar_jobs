@@ -17,18 +17,7 @@ class CreateVacanciesTable extends Migration
             $table->id();
             $table->text('name');
             $table->text('salary');
-            $table->text('key1')->nullable();
-            $table->text('value1')->nullable();
-            $table->text('key2')->nullable();
-            $table->text('value2')->nullable();
-            $table->text('key3')->nullable();
-            $table->text('value3')->nullable();
-            $table->text('key4')->nullable();
-            $table->text('value4')->nullable();
-            $table->text('key5')->nullable();
-            $table->text('value5')->nullable();
-            $table->text('key6')->nullable();
-            $table->text('value6')->nullable(); 
+            $table->text('body')->nullable();
             $table->timestamps();
         });
     }

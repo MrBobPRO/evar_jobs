@@ -75,6 +75,42 @@ a:hover {
     color: black;
 }
 
+#session {
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #322f35;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Spinner styles start */
+.spinner-container {
+    background: #e4e4e4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+    flex-direction: column;
+    display: none;
+    opacity: 0;
+    transition: display 0s, opacity 0.5s;
+}
+.spinner-container p {
+    margin-top: 20px;
+    text-align: center;
+}
+.spinner-container.show {
+    display: flex;
+    opacity: 1;
+}
+/* Spinner styles end */
+
 /* Header sart */
 .header {
     box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);
@@ -299,28 +335,16 @@ a:hover {
 }
 .vacancies-content__vacancy-salary {
     font-style: italic;
-    margin: 0;
+    margin: 0 0 20px;
+}
+.vacancies-content__vacancy-body {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
 }
 .vacancies-tab__pills .nav-link.active .vacancies-tab__vacancy-salary,
 .vacancies-tab__pills .nav-link.show .vacancies-tab__vacancy-salary {
     color: white;
-}
-.vacancies-content__vacancy-key {
-    font-weight: bold;
-    font-style: italic;
-    text-decoration: underline;
-    margin: 20px 0 10px;
-}
-.vacancies-content__vacancy-key:empty {
-    display: none;
-}
-.vacancies-content__vacancy-value {
-    font-size: 15px;
-    line-height: 1.7;
-    font-weight: 300;
-}
-.vacancies-content__vacancy-value:empty {
-    display: none;
 }
 .vacancies-content__button {
     color: #33333382;
@@ -363,14 +387,14 @@ a:hover {
     background-color: #F7F8F9;
 }
 .accordion-button:focus {
-    border-color: rgba(0,0,0,.125);
+    border-color: rgba(0, 0, 0, .125);
     box-shadow: none;
 }
 .accordion-button::after {
     display: none;
 }
 .accordion-button span {
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     margin-left: auto;
     color: #00000070;
     font-size: 14px;
@@ -389,25 +413,14 @@ a:hover {
     line-height: 1.6;
     margin-bottom: 10px;
 }
-.vacancies-accordion__collapse-key {
-    font-weight: bold;
+.vacancies-accordion__collapse-body {
+    font-size: 15px;
     margin-bottom: 10px;
-    font-style: italic;
-    text-decoration: underline;
-}
-.vacancies-accordion__collapse-value {
-    margin-bottom: 10px;
-}
-.vacancies-accordion__collapse-value:empty {
-    display: none;
 }
 .vacancies-accordion__collapse-button {
     display: flex;
     text-decoration: none;
     justify-content: center;
-    padding: 13px 20px;
-}
-.vacancies-accordion__collapse-button:empty {
-    display: none;
+    padding: 12px 20px;
 }
 /* Mobile vacancies end */

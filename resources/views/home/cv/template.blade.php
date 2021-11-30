@@ -10,7 +10,7 @@
             <i class="fa fa-upload" aria-hidden="true"></i> Отправить своё резюме
         </button>
 
-        <form action="/download_cv_template" method="POST">
+        <form action="{{ route('cv.download.template') }}" method="POST">
             {{ csrf_field() }}
             <button class="cv-actions__button" type="submit"><i class="fa fa-download"></i> Скачать шаблон
                 анкеты</button>
@@ -30,7 +30,7 @@
                     <div class="modal-body">
                         <p>Выберите нужный файл (PDF или Microsoft Word). Максимальный размер до 2 мегабайта.</p>
                         {{ csrf_field() }}
-                        <input type="file" accept=".docx, .doc, .pdf" class="upload-file" name="cv">
+                        <input type="file" accept=".docx, .doc, .pdf" class="upload-file" name="file">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="button secondary-button" data-bs-dismiss="modal">Отмена</button>
