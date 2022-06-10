@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $user = new User();
         $user->name = 'admin';
-        $user->email = 'evar_admin@mail.ru';
-        $user->password = bcrypt('nYXk$5]~{9');
+        $user->email = 'admin@mail.ru';
+        $user->password = bcrypt('12345');
         $user->save();
 
         $this->call(VacancySeeder::class);
